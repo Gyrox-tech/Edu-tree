@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduTree – Rural Education</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        background: #fff8f6;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: 260px;
+        background: #fae3d7;
+        height: 100vh;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo {
+        width: 180px;
+        margin: 0 auto 25px auto;
+        display: block;
+    }
+
+    .tab-btn {
+        padding: 12px 15px;
+        margin-bottom: 10px;
+        border-radius: 12px;
+        font-size: 16px;
+        cursor: pointer;
+        display: block;
+        color: #4a3c31;
+        text-decoration: none;
+    }
+
+    input[type=radio]:checked + label {
+        background: #f7c8b6;
+    }
+
+    .sidebar-bottom {
+        margin-top: auto;
+        padding-top: 40px;
+        font-size: 14px;
+    }
+
+    .profile-box {
+        background: #ffe9df;
+        padding: 10px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+    }
+
+    /* Content Area */
+    .content {
+        flex: 1;
+        padding: 30px;
+        background: #fffefd;
+        border-radius: 20px 0 0 20px;
+    }
+
+    .page {
+        display: none;
+    }
+
+    #home-tab:checked ~ #home,
+    #progress-tab:checked ~ #progress,
+    #students-tab:checked ~ #students,
+    #offline-tab:checked ~ #offline,
+    #chapters-tab:checked ~ #chapters {
+        display: block;
+    }
+
+    h2 {
+        color: #4a3c31;
+    }
+
+    p {
+        color: #5a4a42;
+    }
+
+    .box {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #e2d4cd;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+
+    table td, table th {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .progress-bar {
+        height: 10px;
+        background: #ffe3d7;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .progress-fill {
+        height: 100%;
+        background: #ff976a;
+    }
+
+    /* Cards (PW Style) */
+    .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .card {
+        background: #ffffff;
+        border-radius: 15px;
+        padding: 20px;
+        border: 1px solid #eee;
+        box-shadow: 0px 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .card h3 {
+        margin: 0;
+        color: #333;
+    }
+
+    .badges {
+        margin: 10px 0;
+    }
+
+    .badges span {
+        display: inline-block;
+        padding: 6px 12px;
+        margin: 5px 5px 0 0;
+        background: #f5f5f5;
+        border-radius: 20px;
+        font-size: 13px;
+    }
+
+    .card-icon {
+        font-size: 40px;
+        margin-top: 10px;
+    }
+
+    .explore {
+        margin-top: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #6a4df7;
+    }
+</style>
+
+</head>
+<body>
+
+<!-- Hidden Tab Inputs -->
+<input type="radio" id="home-tab" name="tab" checked hidden>
+<input type="radio" id="progress-tab" name="tab" hidden>
+<input type="radio" id="students-tab" name="tab" hidden>
+<input type="radio" id="offline-tab" name="tab" hidden>
+<input type="radio" id="chapters-tab" name="tab" hidden>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+    <img src="edutree-logo.png" class="logo" alt="EduTree Logo">
+
+    <label for="home-tab" class="tab-btn">🏠 Home</label>
+    <label for="progress-tab" class="tab-btn">📊 Student Progress</label>
+    <label for="students-tab" class="tab-btn">👥 Students</label>
+    <label for="offline-tab" class="tab-btn">📚 Offline Learning</label>
+    <label for="chapters-tab" class="tab-btn">📖 Chapters</label>
+
+    <!-- Profile Bottom -->
+    <div class="sidebar-bottom">
+        <div class="profile-box">
+            <span>👩‍🎓</span>
+            <div>
+                <strong>Priyanka</strong><br>
+                Student
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="content">
+
+    <!-- HOME PAGE -->
+    <section class="page" id="home">
+        <h2>Welcome to EduTree 🌳</h2>
+        <p>EduTree helps rural students learn easily with simple courses, offline access, and structured learning paths.</p>
+
+        <h2 style="margin-top:30px;">Learning Categories</h2>
+
+        <div class="cards-grid">
+
+            <div class="card">
+                <h3>Foundational Learning</h3>
+                <div class="badges">
+                    <span>Class 1</span>
+                    <span>Class 2</span>
+                    <span>Class 3</span>
+                </div>
+                <div class="card-icon">📘</div>
+                <div class="explore">Explore Category →</div>
+            </div>
+
+            <div class="card">
+                <h3>Reading Skills</h3>
+                <div class="badges">
+                    <span>Stories</span>
+                    <span>Letters</span>
+                    <span>Phonics</span>
+                </div>
+                <div class="card-icon">📖</div>
+                <div class="explore">Explore Category →</div>
+            </div>
+
+            <div class="card">
+                <h3>Mathematics</h3>
+                <div class="badges">
+                    <span>Counting</span>
+                    <span>Add / Sub</span>
+                    <span>Class 1–5</span>
+                </div>
+                <div class="card-icon">➗</div>
+                <div class="explore">Explore Category →</div>
+            </div>
+
+            <div class="card">
+                <h3>EVS</h3>
+                <div class="badges">
+                    <span>Plants</span>
+                    <span>Animals</span>
+                    <span>Our World</span>
+                </div>
+                <div class="card-icon">🌱</div>
+                <div class="explore">Explore Category →</div>
+            </div>
+
+            <div class="card">
+                <h3>Offline Lessons</h3>
+                <div class="badges">
+                    <span>PDF</span>
+                    <span>Worksheets</span>
+                    <span>Audio</span>
+                </div>
+                <div class="card-icon">📚</div>
+                <div class="explore">Explore Category →</div>
+            </div>
+
+            <div class="card">
+                <h3>Vocabulary Builder</h3>
+                <div class="badges">
+                    <span>Basic</span>
+                    <span>Intermediate</span>
+                    <span>Picture Words</span>
+                </div>
+                <div class="card-icon">📝</div>
+                <div class="explore">Explore Category →</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- STUDENT PROGRESS PAGE -->
+    <section class="page" id="progress">
+        <h2>Student Progress</h2>
+
+        <table>
+            <tr>
+                <th>Subject</th>
+                <th>Completion</th>
+            </tr>
+
+            <tr>
+                <td>Mathematics</td>
+                <td>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 70%"></div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Science</td>
+                <td>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 50%"></div>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Reading Skills</td>
+                <td>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%"></div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- STUDENTS PAGE -->
+    <section class="page" id="students">
+        <h2>Students</h2>
+        <div class="box"><strong>Rahul Sharma</strong> – Class 5</div>
+        <div class="box"><strong>Anita Devi</strong> – Class 4</div>
+        <div class="box"><strong>Mohit Kumar</strong> – Class 3</div>
+        <div class="box"><strong>Sonu Singh</strong> – Class 2</div>
+    </section>
+
+    <!-- OFFLINE PAGE -->
+    <section class="page" id="offline">
+        <h2>Offline Learning</h2>
+        <p>All study materials below work without internet.</p>
+
+        <div class="box">⭐ Basic English Worksheets (PDF)</div>
+        <div class="box">⭐ Maths Practice Sheets</div>
+        <div class="box">⭐ EVS Chapter PDFs</div>
+        <div class="box">⭐ Offline Audio Stories</div>
+    </section>
+
+    <!-- CHAPTERS PAGE -->
+    <section class="page" id="chapters">
+        <h2>Chapters</h2>
+
+        <div class="box">📘 Chapter 1 – Knowing Our World</div>
+        <div class="box">📘 Chapter 2 – Numbers & Counting</div>
+        <div class="box">📘 Chapter 3 – Plants and Animals</div>
+        <div class="box">📘 Chapter 4 – Water, Air & Weather</div>
+    </section>
+
+</div>
+
+</body>
+</html>
